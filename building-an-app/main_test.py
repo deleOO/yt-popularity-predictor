@@ -76,8 +76,8 @@ def server_error(e):
     """.format(e), 500
 
 # Run the application
-# use my personal api_key
-api_key = 'AIzaSyC82xTxZfelpHfr1bdFA7-yx23FdomqJck'
+# insert your personal api_key
+api_key = ''
 
 #connect my key to youtube api v3
 youtube = build ('youtube', 'v3', developerKey= api_key)
@@ -118,8 +118,8 @@ def starScraping(url):
     metadata = get_metadata(video_id)
 
     stats[0]['statistics']['commentCount'] = int(stats[0]['statistics']['commentCount'])
-
-    api = Api(api_key="AIzaSyC82xTxZfelpHfr1bdFA7-yx23FdomqJck")
+    #insert your personal api key
+    api = Api(api_key="")
 
     channel = api.get_channel_info(channel_id=metadata.get("channel_id"))
     for data in channel.items:

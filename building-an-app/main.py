@@ -58,8 +58,8 @@ def server_error(e):
 
 # Run the application
 
-# use my personal api_key
-api_key = 'AIzaSyC82xTxZfelpHfr1bdFA7-yx23FdomqJck'
+# insert your personal api_key
+api_key = ''
 
 #connect my key to youtube api v3
 youtube = build ('youtube', 'v3', developerKey= api_key)
@@ -97,8 +97,8 @@ def starScraping(url):
     metadata = get_metadata(video_id)
     #data cleaning
     stats[0]['statistics']['commentCount'] = int(stats[0]['statistics']['commentCount'])
-    # use my personal api_key
-    api = Api(api_key="AIzaSyC82xTxZfelpHfr1bdFA7-yx23FdomqJck")
+    # insert your personal api_key
+    api = Api(api_key="")
     #we download the channel statistics
     channel = api.get_channel_info(channel_id=metadata.get("channel_id"))
     for data in channel.items:
@@ -217,8 +217,11 @@ def starScraping(url):
     #if the video has a life cycle of 1 day or less then return the prediction
     if delta.days <= 1:
         #load the short term model from gcp bucket
-        with open('bdt2021-315814-d5aa6e6a8127.json') as f:
+
+        #load your gcp bucket credential in json
+        with open('') as f:
             credentials_dict = json.load(f)
+            
         # Setting credentials using the downloaded JSON file
         credentials = ServiceAccountCredentials.from_json_keyfile_dict(
             credentials_dict
