@@ -6,8 +6,8 @@ import time
 from pyyoutube import Api
 from datetime import date
 
-# use my personal api_key
-api_key = 'AIzaSyCugBM15WV7IVXDuLmJ4JARKFGio9bk9vA'
+# insert your personal api_key
+api_key = ''
 
 #connect my key to youtube api v3
 youtube = build ('youtube', 'v3', developerKey= api_key)
@@ -67,8 +67,8 @@ def get_pop_videos_metadata(country_codes):
 
     #call get_pop_videos_stats to get video's stats for every video_ids from get_pop_videos(country) function
     stats = get_pop_videos_stats(country_codes)
-
-    api = Api(api_key= "AIzaSyCugBM15WV7IVXDuLmJ4JARKFGio9bk9vA")
+    #insert your personal api key
+    api = Api(api_key= "")
 
     #for the statistics of each video obtained we call the function get_metadata to get more metadata
     for i in range(len(stats)):
@@ -178,12 +178,12 @@ for i in range(len(data_video)):
         data_video[i]['statistics']['dislikeCount'] = 0
 
 
-#connect to gpc mysql istance   
+#insert your credential to connect to mysql istance   
 mydb = mysql.connector.connect(
-  user="root",
-  host="35.246.250.240",
-  password="M4culture",
-  database="youtube_videos"
+  user="",
+  host="",
+  password="",
+  database=""
 )
 
 mycursor = mydb.cursor()
