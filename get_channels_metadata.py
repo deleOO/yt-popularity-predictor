@@ -4,8 +4,8 @@ import time
 #import a library that provides an easy way to use YouTube Data API V3.
 from pyyoutube import Api
 
-# use my personal api_key
-api = Api(api_key= "AIzaSyCXA77OXGfC8_JRTcRExnSBOBDhHEORiAI")
+# insert here your personal API key
+api = Api(api_key= "")
 
 #load video_metadata
 with open('videos_metadata.json') as f:
