@@ -3,11 +3,12 @@ import pandas as pd
 from datetime import datetime, date
 import json
 
+#insert sql credential
 dbcon = pymysql.connect(
-  user="root",
-  host="35.246.250.240",
-  password="M4culture",
-  database="youtube_videos"
+  user="",
+  host="",
+  password="",
+  database=""
 )
 
 # Load data previously collected in sql
