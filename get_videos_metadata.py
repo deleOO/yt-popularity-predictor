@@ -78,8 +78,7 @@ threads = []
 
 #change range if you want to try to download only a part of metadata's dataset
 
-# for i in range(len(key_id)):
-for i in range(50):
+for i in range(len(key_id)):
     #single download time calculation 
     start_time = time.time()
     #threading module permits us to separate flow of execution. This means that program will have two things happening at once optimizing the cycle execution time
@@ -142,8 +141,8 @@ print('videos_metadata.json without comments data saved')
 with open('videos_metadata.json') as f:
     data = json.load(f)
 
-# use my personal api_key
-api_key = 'AIzaSyCkM_kqJD-H0tv_Ao_k4_I-mgjaaF9gkxE'
+# insert your personal API key
+api_key = ''
 
 #connect my key to youtube api v3
 youtube = build ('youtube', 'v3', developerKey= api_key)
