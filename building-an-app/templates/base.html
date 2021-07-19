@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Youtube Video Popularity Prediction</title>
+</head>
+<body>
+    <div class="s01" id="block_form" {% if message %}  style="display:block;"  {% endif %}>
+        
+    <form method="POST" id="forminvio">
+        <fieldset>
+          <legend> Youtube Video Popularity Prediction</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="video" name="video" type="text" placeholder="Inserisci url video" required/>
+          </div>
+          
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="submit">Cerca</button>
+          </div>
+          
+        </div>
+        <br>
+       <div id="box" style="    text-align: center;
+       display: none;
+       background: white;
+       margin: auto;
+       width: 30%;
+       padding: 5%;"><div class="spinner-border" style="color:red"></div><br><small style="font-size:22px;color:red">Caricamento in corso...</small></div> 
+      </form>    
+     
+      {% if message %}
+      <div class="result">
+        <p>{{ message|safe }}</p>
+        </div>
+    {% endif %}
+      </div>
+    
+    
+    {% block content %}
+    {% endblock %}
+ <script>
+ document.querySelector("#forminvio").addEventListener("submit", function(e){
+        console.log('dario');
+        box.style.display="block";
+          //stop form from submitting
+  
+});
+ 
+ </script>   
+</body>
+</html>
