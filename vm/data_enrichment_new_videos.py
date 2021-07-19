@@ -8,8 +8,8 @@ from datetime import datetime
 from datetime import date
 from datetime import datetime, timedelta
 
-# use my personal api_key
-api_key = 'AIzaSyB2-UdBlLeCWxFdBQYzG_1MADdP3fvrVZs'
+# insert your personal api_key
+api_key = ''
 
 #connect my key to youtube api v3
 youtube = build ('youtube', 'v3', developerKey= api_key)
@@ -22,8 +22,8 @@ def youtube_search(parameter, max_results):
     #set the datetime limits with which to make the video request to youtube
     start_time = start.strftime('%Y-%m-%dT%H:%M:%SZ')
     end_time = end.strftime('%Y-%m-%dT%H:%M:%SZ')
-    # use my personal api_key
-    api_key = 'AIzaSyB2-UdBlLeCWxFdBQYzG_1MADdP3fvrVZs'
+    # insert your personal api_key
+    api_key = ''
     #connect my key to youtube api v3
     youtube = build ('youtube', 'v3', developerKey= api_key)
 
@@ -104,8 +104,8 @@ def get_last_videos(parameter, max_results):
 
     #call get_videos_stats to get video's stats for every video_ids
     stats = get_videos_stats(video_ids)
-
-    api = Api(api_key= "AIzaSyB2-UdBlLeCWxFdBQYzG_1MADdP3fvrVZs")
+    # insert your personal api_key
+    api = Api(api_key= "")
 
     #for the statistics of each video obtained we call the function get_metadata to get more metadata
     for i in range(len(stats)):
@@ -211,12 +211,12 @@ for i in range(len(data_video)):
         data_video[i]['statistics']['dislikeCount'] = 0
 
     
-#connect to gpc mysql istance   
+#insert your credential to connect to mysql istance   
 mydb = mysql.connector.connect(
-  user="root",
-  host="35.246.250.240",
-  password="M4culture",
-  database="youtube_videos"
+  user="",
+  host="",
+  password="",
+  database=""
 )
 
 mycursor = mydb.cursor()
