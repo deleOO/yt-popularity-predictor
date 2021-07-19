@@ -1,0 +1,6 @@
+venv*
+*.idea
+*.pkl
+*.json
+!urls.json
+__pycache__*
