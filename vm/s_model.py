@@ -59,7 +59,8 @@ print('model saved!')
 
 #save the model to gcp bucket
 
-with open('bdt2021-315814-d5aa6e6a8127.json') as f:
+#load your gcp bucket credential in json
+with open('') as f:
     credentials_dict = json.load(f)
 
 # Setting credentials using the downloaded JSON file
