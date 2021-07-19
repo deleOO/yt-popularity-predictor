@@ -1,9 +1,5 @@
-#aggiungere al dizionario le labels prendendole dal dataset di youtube 8m e matchando gli id
-
 import json
-from datetime import datetime 
 
-    
 with open('videos_metadata.json') as f:
     data = json.load(f)
     
@@ -20,13 +16,26 @@ print('videos_metadata.json updated')
 
 with open('channel_metadata.json') as f:
     data = json.load(f)
-    
+
 for i in range(len(data)):
-    data[i]['statistics']['viewCount'] = float (data[i]['statistics']['viewCount'])
-    data[i]['statistics']['subscriberCount'] = float (data[i]['statistics']['subscriberCount'])
-    data[i]['statistics']['videoCount'] = float (data[i]['statistics']['videoCount'])
-    data[i]['pubblishedAt'] = data[i]['pubblishedAt'][:10]
-#     data[i]['pubblishedAt'] = datetime.strptime(data[i]['pubblishedAt'], '%Y-%m-%d')
+    # clean upload date time
+    if data[i]['pubblishedAt'] != None:
+        data[i]['pubblishedAt'] = data[i]['pubblishedAt'][:10]
+    else:
+        data[i]['pubblishedAt'] = None
+    if 'viewCount' in data[i]['statistics']:
+        data[i]['statistics']['viewCount'] = float(data[i]['statistics']['viewCount'])
+    else:
+        data[i]['statistics']['viewCount'] = 0
+    if 'videoCount' in data[i]['statistics']:
+        data[i]['statistics']['videoCount'] = float(data[i]['statistics']['videoCount'])
+    else:
+        data[i]['statistics']['videoCount'] = 0
+
+    if data[i]['statistics']['subscriberCount'] != None:
+        data[i]['statistics']['subscriberCount'] = float(data[i]['statistics']['subscriberCount'])
+    else:
+        data[i]['statistics']['subscriberCount'] = 0
 
 with open('channel_metadata.json', 'w') as json_file:
     json.dump(data, json_file)
