@@ -109,6 +109,7 @@ Pick a random video URL on YouTube and discover whether it will be popular or no
 You can now choose on your own what video will be the best for investing in ads to promote your business!  
 
 Pay attention to select a day-old video. Otherwise no prediction will be provided.
-Have a good time! 
+
+*Have a good time!*
 
 
