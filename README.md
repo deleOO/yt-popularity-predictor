@@ -21,7 +21,7 @@ Please, follow carefully setup instructions.
 Tested on Windows 10 Home 20H2.
 
 ### 1) ELT for `l_model`
-Create your virtual environment in the main folder:
+Clone the repo. Then create a virtual environment in the main folder:
 ```
 python -m venv .venv
 .venv\Scripts\activate
@@ -30,11 +30,23 @@ First install required packages:
 ```
 pip install -r requirements.txt
 ```
-To train the `l_model`, you need to have data saved locally. 
-Data can be downloaded from:
- -[YouTube-8M](https://research.google.com/youtube8m/index.html)
+To transfor data for traing the `l_model`, you need to have the extracted data from YT8M dataset saved locally.
+This process takes a long time. Thus, you can easily download from:
 
-Alternatively, run the script:
+* [parsed_val.pkl](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
+
+Alternatively, you can regenerate data by running:
+
+```
+mkdir -p ~/data/yt8m/video; cd ~/data/yt8m/video
+curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
+
+python data_parser.py
+```
+
+
+
+
 ```
 python download_data.py
 ```
