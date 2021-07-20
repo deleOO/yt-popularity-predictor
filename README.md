@@ -46,4 +46,15 @@ At this point you have the l_model for long term prediction trained.
 We now move to the s_model for short term prediction.
 
 2) Virtual Machine (VM)
+This VM environmnet is designed to be deployed on an external server. Every script is designed to be run programmatically on a daily basis. 
+To do this we rely on Task Scheduler, a component of Microsoft Windows, that provides the ability to schedule the launch scripts at pre-defined times with batch files.
+However, VM can be replicated locally by following the above instruction.
+
+Enter in the vm folder, create virtual environment and install required packages.
+```
+cd vm
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
 
