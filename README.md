@@ -7,7 +7,7 @@ The outcome of both predictions is deployed on a web application hosted in a clo
 
 To reach the goal, we developed two different machine learning model, one for long term prediction (`l_model`) and one for short term prediction (`s_model`). As training data, we used: 
 
-- for`l_model`, an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html), which we enriched by scraping metadata with youtube api v3; 
+- for`l_model`, an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html) (YT8M), which we enriched by scraping metadata with youtube api v3; 
 - for `s_model`, we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To automate the operation, we used a Virtual Machine (VM) hosted in a cloud server set to schedule the launch scripts and retrain day-to-day the `s_model` at a pre-defined time.
 
 This project is designed to be run in three different stages, each with a dedicated virtual environment:
@@ -30,8 +30,7 @@ First install required packages:
 ```
 pip install -r requirements.txt
 ```
-To transfor data for traing the `l_model`, you need to have the extracted data from YT8M dataset saved locally.
-This process takes a long time. Thus, you can easily download from:
+To train the `l_model`, you need to have processed data saved locally. This means to download the validation partition from YT8M dataset and extract information from TensorFlow Record files. Since this process takes a long time, you can easily download from:
 
 * [parsed_val.pkl](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
 
@@ -44,13 +43,14 @@ curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
 python data_parser.py
 ```
 
+If you want to follow step-by-step
 
 
 
 ```
 python download_data.py
 ```
-If you want to regenerate data and replicate every single steps to create historical data from YT8M validation dataset run:
+
 ```
 mkdir -p ~/data/yt8m/video; cd ~/data/yt8m/video
 curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
