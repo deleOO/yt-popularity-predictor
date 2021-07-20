@@ -41,7 +41,7 @@ curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
 
 python data_parser.py
 ```
-Please, make sure you have at least 4 GB of free space in your hard disk before running the code.
+Please, make sure you have at least 4 GB of free space in your hard disk before running the above code.
 
 If you want to replacate step-by-step the operations we performed from data enrichment to the model, run the following scripts in the given order: 
 ```
@@ -54,7 +54,7 @@ python l_model.py
 ```
 
 At this point, you should finally have the `l_model` saved as pickle file in your machine. 
-If you want to save time, you can download all the ELT script outputs,l_model included, by running:
+If you want to save time, you can download all the ELT script outputs, l_model included, by running:
 ```
 python download_data.py
 ```
@@ -84,13 +84,16 @@ python s_model.py
 Please, note that an input file is needed to run `clock_query.py`. You can create an empty json named 'mysql_data.json' or download it from:
 * [mysql_data.json](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
 
+Let's dive into the last stage.
+
 ### 3) Web App
 Web app is designed to be deployed on a cloud server with specific credentials. 
 You can find the web app at this URL:
 https://bdt2021-315814.oa.r.appspot.com/
 
-To use it online, please ask to enable the application to us. 
-However, you can run and test it locally following the above instruction.
+To use it online, please contact us to enable the application. 
+However, you can test the web app locally following this steps:
+
 Enter in the building-an-app folder, create virtual environment and install required packages.
 ```
 cd building-an-app
@@ -102,7 +105,9 @@ To test the web application run this script
 ```
 python main.py
 ```
-Pick a yt random video and discover whether or not will be popular. 
+Pick a random video URL on YouTube and discover whether it will be popular or not, in short and long term.
+You can now choose on your own what video will be the best for investing in ads to promote your business!  
+
 Pay attention to select a day-old video. Otherwise no prediction will be provided.
 Have a good time! 
 
