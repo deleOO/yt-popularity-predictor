@@ -8,18 +8,18 @@ The outcome of both predictions is deployed on a web application hosted in a clo
 To reach the goal, we developed two different machine learning model, one for long term prediction (`l_model`) and one for short term prediction (`s_model`). As training data, we used: 
 
 - for`l_model`, an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html), which we enriched by scraping metadata with youtube api v3; 
-- for `s_model`, we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To automate the operation, we set a Virtual Machine (VM) hosted in a cloud server to schedule the launch scripts and retrain day-to-day the `s_model` at a pre-defined time.
+- for `s_model`, we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To automate the operation, we used a Virtual Machine (VM) hosted in a cloud server set to schedule the launch scripts and retrain day-to-day the `s_model` at a pre-defined time.
 
 This project is designed to be run in three different stages, each with a dedicated virtual environment:
-1) Local environment for `l_model`
+1) Local ELT for `l_model`
 2) Virtual Machine (VM) for `s_model`
 3) Web Application
 
-Please, follow carefully setup instructions to avoid . 
+Please, follow carefully setup instructions. 
 
 ## Setup
 Tested on Windows 10 Home 20H2.
-1) Historical Dataset for ML
+1) Local Local ELT for `l_model`
 Create your virtual environment in the main folder:
 ```
 python -m venv .venv
