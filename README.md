@@ -68,6 +68,25 @@ python clock_query.py
 python s_model.py
 ```
 
+3) Web App
+Web app is designed to be deployed on a cloud server with specific credentials. 
+You can find the web app at this URL:
+https://bdt2021-315814.oa.r.appspot.com/
+To use it online, please ask to enable the application to us. 
+However, you can run and test it locally following the above instruction.
+Enter in the building-an-app folder, create virtual environment and install required packages.
+```
+cd building-an-app
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+To test the web application run this script
+```
+python main.py
+```
+Pick a yt random video and discover whether or not will be popular. 
+Pay attention to select a day-old video. Otherwise no prediction will be provided.
+Have a good time! 
 
 
-3) Web App 
