@@ -105,6 +105,10 @@ To test the web application run this script
 ```
 python main.py
 ```
+Make sure to have `l_model` in the same folder when running the above script. 
+If you did not donwloaded it before, do now from:
+* [l_model.pkl](https://drive.google.com/uc?export=download&id=1RUGbdKE2bQK-ayPlI7TUsj35J0S1_tpb)
+
 Pick a random video URL on YouTube and discover whether it will be popular or not, in short and long term.
 You can now choose on your own what video will be the best for investing in ads to promote your business!  
 
