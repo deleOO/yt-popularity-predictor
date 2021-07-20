@@ -54,7 +54,7 @@ python l_model.py
 ```
 
 At this point, you should finally have the `l_model` saved as pickle file in your machine. 
-If you want to save time, you can download all the ELT script outputs, by running:
+If you want to save time, you can download all the ELT script outputs,l_model included, by running:
 ```
 python download_data.py
 ```
@@ -63,7 +63,7 @@ We now move to the second stage of the project.
 ### 2) Virtual Machine (VM)
 This VM environmnet is designed to be deployed on an external server. Every script is designed to be run programmatically on a daily basis. 
 To do this we rely on Task Scheduler, a component of Microsoft Windows, that provides the ability to schedule the launch scripts at pre-defined times with batch files.
-However, VM can be replicated locally by following the above instruction.
+However, VM can be replicated locally by following the instructions below.
 
 Enter in the vm folder, create virtual environment and install required packages.
 ```
@@ -72,7 +72,8 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
-To retrain s_model you need access to MySQL db hosted in a cloud instance. To do this, please ask MySQL credentials to us.
+To retrain `s_model`, you need access to MySQL db hosted in a cloud instance. This needs authentication for you to be able to query information.
+Please, contact us for credentials.
 Once obtained, run the following scripts in the order indicated:
 ```
 python data_enrichment_new_videos.py
@@ -80,11 +81,14 @@ python data_enrichment_trending.py
 python clock_query.py
 python s_model.py
 ```
+Please, note that an input file is needed to run `clock_query.py`. You can create an empty json named 'mysql_data.json' or download it from:
+* [mysql_data.json](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
 
 ### 3) Web App
 Web app is designed to be deployed on a cloud server with specific credentials. 
 You can find the web app at this URL:
 https://bdt2021-315814.oa.r.appspot.com/
+
 To use it online, please ask to enable the application to us. 
 However, you can run and test it locally following the above instruction.
 Enter in the building-an-app folder, create virtual environment and install required packages.
