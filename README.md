@@ -82,7 +82,7 @@ python clock_query.py
 python s_model.py
 ```
 Please, note that an input file is needed to run `clock_query.py`. You can create an empty json named 'mysql_data.json' or download it from:
-* [mysql_data.json](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
+* [mysql_data.json](https://drive.google.com/uc?export=download&id=1Ep-L7Vvm1nYpfYUWnWV6Zpi4f9t6yhHG)
 
 Let's dive into the last stage.
 
