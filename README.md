@@ -6,6 +6,7 @@ This project is designed for providing a real-time prediction of the popularity 
 To reach the goal, we trained two different machine learning model, one for long term (`l_model`) prediction and one for short term (`s_model`).
 - for l_model we create an historical dataset starting from yt8m validation subset and enriched by scraping metadata with youtube api v3 locally
 - for s_model we scraped daily around 2000 videos metadata among trending videos and videos uploaded at least a week. To do this we used a VM hosted in a cloud server setted to schedule the launch scripts and retrain day-to-day s_model at pre-defined times.
+
 The outcome is deployed in a web application hosted in a cloud server that allows user to discover whetever a yt video will be popular in short and long term by inserting the URL video in a form. 
 
 This project is designed to be run in three different stages each with a dedicated virtual environment:
@@ -58,3 +59,15 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+To retrain s_model you need access to MySQL db hosted in a cloud instance. To do this, please ask MySQL credentials to us.
+Once obtained, run the following scripts in the order indicated:
+```
+python data_enrichment_new_videos.py
+python data_enrichment_trending.py
+python clock_query.py
+python s_model.py
+```
+
+
+
+3) Web App 
