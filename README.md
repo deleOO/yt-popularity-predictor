@@ -42,10 +42,15 @@ Alternatively, you can regenerate data by running:
 ```
 mkdir -p ~/data/yt8m/video; cd ~/data/yt8m/video
 curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
+cd ~/data/yt8m/video
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r tf_requirements.txt
 
 python data_parser.py
 ```
 Please, make sure you have at least 4 GB of free space in your hard disk before running the above code.
+We extract tensorflow files in a dedicated environment. We highly suggest you to the same, because Tensorflow package presents incompatibility with other libraries we used in the other stages of the project.   
 
 To proceed, you need to have the file parsed_val.pkl locally saved in your machine, no matter which of the previous options you chose.
 If you want to replacate step-by-step the operations we performed from data enrichment to the model, run the following scripts in the given order: 
