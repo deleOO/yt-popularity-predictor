@@ -47,6 +47,7 @@ python data_parser.py
 ```
 Please, make sure you have at least 4 GB of free space in your hard disk before running the above code.
 
+To proceed, you need to have the file parsed_val.pkl locally saved in your machine, no matter which of the previous options you chose.
 If you want to replacate step-by-step the operations we performed from data enrichment to the model, run the following scripts in the given order: 
 ```
 python get_videos_metadata.py
@@ -58,7 +59,7 @@ python l_model.py
 ```
 
 At this point, you should finally have the `l_model` saved as pickle file in your machine. 
-If you want to save time, you can download all the ELT script outputs, l_model included, by running:
+If you want to save time, you can download all the ELT script outputs (l_model included) by running:
 ```
 python download_data.py
 ```
