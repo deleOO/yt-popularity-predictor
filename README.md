@@ -2,20 +2,20 @@
 Final project exam of Big Data Technologies, University of Trento, 2020-21.
 
 ## General info
-This project is designed for providing a real-time prediction of the popularity in short and long term of recently uploaded YouTube videos.
-The outcome of both predictions is deployed on a web application hosted in a cloud server that allows users to personally pick a video and discover whether that video will be popular or not in short and long term by simply inserting the URL in a form. 
+This project is designed for providing a real-time prediction of the popularity in short and long term of videos recently uploaded on YouTube.
+The outcome of both predictions is deployed on a web application hosted in a cloud server that allows users to personally pick a video and discover whether that video will be popular or not by simply inserting the URL in a form. 
 
-To reach the goal, we developed two different machine learning model - one for long term prediction (`l_model`) and one for short term (`s_model`) - using as training data a static dataset and a dynamic dataset, respectively.
-- for`l_model` we relied on an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html), which we enriched by scraping metadata with youtube api v3. 
-- for `s_model` we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To do this we used a Virtual Machine hosted in a cloud server setted to schedule the launch scripts and retrain day-to-day `s_model` at pre-defined times.
+To reach the goal, we developed two different machine learning model, one for long term prediction (`l_model`) and one for short term prediction (`s_model`). As training data, we used: 
 
+- for`l_model`, an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html), which we enriched by scraping metadata with youtube api v3; 
+- for `s_model`, we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To automate the operation, we set a Virtual Machine (VM) hosted in a cloud server to schedule the launch scripts and retrain day-to-day the `s_model` at a pre-defined time.
 
-
-This project is designed to be run in three different stages each with a dedicated virtual environment:
-1) Historical Dataset for l_model
-2) Virtual Machine (VM) for s_model
+This project is designed to be run in three different stages, each with a dedicated virtual environment:
+1) Local environment for `l_model`
+2) Virtual Machine (VM) for `s_model`
 3) Web Application
-For this reason, follow carefully setup instructions. 
+
+Please, follow carefully setup instructions to avoid . 
 
 ## Setup
 Tested on Windows 10 Home 20H2.
