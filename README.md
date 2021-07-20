@@ -5,8 +5,7 @@ Final project exam of Big Data Technologies, University of Trento, 2020-21.
 This project is designed for providing a real-time prediction of the popularity in short and long term of videos recently uploaded on YouTube.
 The outcome of both predictions is displayed on a web application hosted in a cloud server that allows users to personally pick a video and discover whether that video will be popular or not by simply inserting the URL in a form. 
 
-Put here the web-app image
-![webb-app](https://drive.google.com/file/d/1a8GIIIlVlN4RIFcC7tOn5MBjNtaMNEst/view?usp=sharing)
+![web_app](https://user-images.githubusercontent.com/83338910/126363152-229a7795-bacf-4639-985d-ed8f4f6510f3.jpeg)
 
 
 
