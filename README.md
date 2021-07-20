@@ -1,4 +1,4 @@
-### yt-popularity-predictor
+# yt-popularity-predictor
 Final project exam of Big Data Technologies, University of Trento, 2020-21.
 
 ## General info
@@ -20,7 +20,7 @@ Please, follow carefully setup instructions.
 ## Setup
 Tested on Windows 10 Home 20H2.
 
-# 1) ELT for `l_model`
+### 1) ELT for `l_model`
 Create your virtual environment in the main folder:
 ```
 python -m venv .venv
@@ -30,7 +30,11 @@ First install required packages:
 ```
 pip install -r requirements.txt
 ```
-To obtain historical dataset, explore it and train long term machine learning, you need to have data saved locally. You can download it by running:
+To train the `l_model`, you need to have data saved locally. 
+Data can be downloaded from:
+ -[YouTube-8M](https://research.google.com/youtube8m/index.html)
+
+Alternatively, run the script:
 ```
 python download_data.py
 ```
@@ -50,7 +54,7 @@ python l_model.py
 At this point you have the l_model for long term prediction trained. 
 We now move to the s_model for short term prediction.
 
-# 2) Virtual Machine (VM)
+### 2) Virtual Machine (VM)
 This VM environmnet is designed to be deployed on an external server. Every script is designed to be run programmatically on a daily basis. 
 To do this we rely on Task Scheduler, a component of Microsoft Windows, that provides the ability to schedule the launch scripts at pre-defined times with batch files.
 However, VM can be replicated locally by following the above instruction.
@@ -71,7 +75,7 @@ python clock_query.py
 python s_model.py
 ```
 
-# 3) Web App
+### 3) Web App
 Web app is designed to be deployed on a cloud server with specific credentials. 
 You can find the web app at this URL:
 https://bdt2021-315814.oa.r.appspot.com/
