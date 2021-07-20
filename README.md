@@ -35,27 +35,16 @@ To train the `l_model`, you need to have processed data saved locally. This mean
 * [parsed_val.pkl](https://drive.google.com/uc?export=download&id=1rEGoFPZZtrJtvJe0uYq-VVdJfurClCP8)
 
 Alternatively, you can regenerate data by running:
-
 ```
 mkdir -p ~/data/yt8m/video; cd ~/data/yt8m/video
 curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
 
 python data_parser.py
 ```
+Please, make sure you have at least 4 GB of free space in your hard disk before running the code.
 
-If you want to follow step-by-step
-
-
-
+If you want to replacate step-by-step the operations we performed from data enrichment to the model, run the following scripts in the given order: 
 ```
-python download_data.py
-```
-
-```
-mkdir -p ~/data/yt8m/video; cd ~/data/yt8m/video
-curl data.yt8m.org/download.py | partition=2/video/validate mirror=eu python
-
-python data_parser.py
 python get_videos_metadata.py
 python get_channels_metadata.py
 python data_cleaning.py
@@ -63,8 +52,13 @@ python data_merger.py
 python features_engineering.py
 python l_model.py
 ```
-At this point you have the l_model for long term prediction trained. 
-We now move to the s_model for short term prediction.
+
+At this point, you should finally have the `l_model` saved as pickle file in your machine. 
+If you want to save time, you can download all the ELT script outputs, by running:
+```
+python download_data.py
+```
+We now move to the second stage of the project.
 
 ### 2) Virtual Machine (VM)
 This VM environmnet is designed to be deployed on an external server. Every script is designed to be run programmatically on a daily basis. 
