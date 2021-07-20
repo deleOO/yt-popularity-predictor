@@ -11,7 +11,7 @@ To reach the goal, we developed two different machine learning model, one for lo
 - for `s_model`, we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To automate the operation, we used a Virtual Machine (VM) hosted in a cloud server set to schedule the launch scripts and retrain day-to-day the `s_model` at a pre-defined time.
 
 This project is designed to be run in three different stages, each with a dedicated virtual environment:
-1) Local ELT for `l_model`
+1) Extract, transform, and load (ETL) for `l_model`
 2) Virtual Machine (VM) for `s_model`
 3) Web Application
 
@@ -19,7 +19,8 @@ Please, follow carefully setup instructions.
 
 ## Setup
 Tested on Windows 10 Home 20H2.
-1) Local Local ELT for `l_model`
+
+1) ELT for `l_model`
 Create your virtual environment in the main folder:
 ```
 python -m venv .venv
