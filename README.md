@@ -5,9 +5,9 @@ This repo consist of our team-project for the final exam in the Big Data Technol
 This project is designed for providing a real-time prediction of the popularity in short and long term of recently uploaded youtube videos.
 To reach the goal, we trained two different machine learning model, one for long term prediction (`l_model`) and one for short term (`s_model`), with static data and dynamic data, respectively.
 - for`l_model` we relied on an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html), which we enriched by scraping metadata with youtube api v3 locally
-- for `s_model` we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To do this we used a Virtual Machine hosted in a cloud server setted to schedule the launch scripts and retrain day-to-day s_model at pre-defined times.
+- for `s_model` we daily scraped around 2000 videos metadata among trending videos and videos uploaded for at least a week. To do this we used a Virtual Machine hosted in a cloud server setted to schedule the launch scripts and retrain day-to-day `s_model` at pre-defined times.
 
-The outcome is deployed in a web application hosted in a cloud server that allows user to discover whetever a yt video will be popular in short and long term by inserting the URL video in a form. 
+The outcome is deployed in a web application hosted in a cloud server that allows users to discover whetever a yt video will be popular in short and long term or not by inserting the URL video in a form. 
 
 This project is designed to be run in three different stages each with a dedicated virtual environment:
 1) Historical Dataset for l_model
