@@ -5,6 +5,11 @@ Final project exam of Big Data Technologies, University of Trento, 2020-21.
 This project is designed for providing a real-time prediction of the popularity in short and long term of videos recently uploaded on YouTube.
 The outcome of both predictions is displayed on a web application hosted in a cloud server that allows users to personally pick a video and discover whether that video will be popular or not by simply inserting the URL in a form. 
 
+Put here the web-app image
+![webb-app](https://drive.google.com/file/d/1a8GIIIlVlN4RIFcC7tOn5MBjNtaMNEst/view?usp=sharing)
+
+
+
 To reach the goal, we developed two different machine learning model, one for long term prediction (`l_model`) and one for short term prediction (`s_model`). As training data, we used: 
 
 - for`l_model`, an existing dataset [YouTube-8M](https://research.google.com/youtube8m/index.html) (YT8M), which we enriched by scraping metadata with youtube api v3; 
